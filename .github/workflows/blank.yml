@@ -4,6 +4,13 @@ on:
   push:
   pull_request:
   workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Name'
+        required: true
+      tags:
+        description: 'Debug Mode'
+        type: boolean
 
 jobs:
   build:
