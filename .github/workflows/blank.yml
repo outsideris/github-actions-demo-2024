@@ -14,5 +14,3 @@ jobs:
     uses: outsideris/actions-test/.github/workflows/lint.yaml@main
     with:
       name: outsider
-    secrets: 
-      token: ${{ secrets.TOKEN }}
