@@ -17,8 +17,8 @@ jobs:
     runs-on: ubuntu-latest
     if: >
       ${{ 
-        github.event.workflow_run.conclusion
-        == 'success' 
+        github.repository 
+        == 'octo-org/octo-repo-prod'
       }}
 
     steps:
