@@ -12,3 +12,7 @@ jobs:
         run: echo 'Ran build'
   call-lint:
     uses: outsideris/actions-test/.github/workflows/lint.yaml@main
+    with:
+      name: outsider
+    secrets: 
+      token: ${{ secrets.TOKEN }}
