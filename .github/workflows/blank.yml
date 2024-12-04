@@ -9,6 +9,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build
-        run: Ran build
+        run: echo 'Ran build'
   call-lint:
     uses: outsideris/actions-test/.github/workflows/lint.yaml@main
