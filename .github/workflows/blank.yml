@@ -3,6 +3,7 @@ name: CI
 on:
   push:
   pull_request:
+  workflow_dispatch:
 
 jobs:
   test:
@@ -10,9 +11,6 @@ jobs:
     steps:
       - name: Build
         run: echo 'Ran build'
-  call-lint:
-    uses: outsideris/actions-test/.github/workflows/lint.yaml@main
-    with:
-      name: outsider
-    secrets:
-      API_KEY: ${{ secrets.API_KEY }}
+        run: |
+        gh api /repos/outsideris/actions-test/dispatches \
+        -f event_type='trigger'
