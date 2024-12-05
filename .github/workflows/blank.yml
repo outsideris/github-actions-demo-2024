@@ -15,3 +15,5 @@ jobs:
     uses: outsideris/actions-test/.github/workflows/lint.yaml@main
     with:
       name: outsider
+    secrets:
+      DEV_VAR: ${{ secrets.DEV_VAR }}
