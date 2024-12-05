@@ -12,11 +12,13 @@ jobs:
       - run: echo build
   deploy-dev:
     needs: build
+    environment: dev
     runs-on: ubuntu-latest
     steps:
       - run: echo dev
   deploy-prod:
     needs: deploy-dev
+    environment: prod
     runs-on: ubuntu-latest
     steps:
       - run: echo prod
