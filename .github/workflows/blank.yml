@@ -1,24 +1,23 @@
-name: CI
+name: Release
 
 on:
   push:
   pull_request:
   workflow_dispatch:
-  
 
 jobs:
-  test:
+  build:
     runs-on: ubuntu-latest
     steps:
-      - name: Caller's build
-        run: echo caller
-        shell: bash
-      - id: composite
-        uses: outsideris/actions-test@main
-        with:
-          name: 'Outsider'
-      - run: echo result = $RESULT
-        shell: bash
-        env:
-          RESULT: ${{ steps.composite.outputs.result }}
+      - run: echo build
+  deploy-dev:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo dev
+  deploy-prod:
+    needs: deploy-dev
+    runs-on: ubuntu-latest
+    steps:
+      - run: echo prod
       
