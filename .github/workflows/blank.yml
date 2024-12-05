@@ -10,7 +10,6 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Build
-        run: echo 'Ran build'
         run: |
         gh api /repos/outsideris/actions-test/dispatches \
         -f event_type='trigger'
