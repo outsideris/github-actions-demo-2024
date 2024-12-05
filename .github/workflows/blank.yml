@@ -16,4 +16,4 @@ jobs:
     with:
       name: outsider
     secrets:
-      DEV_VAR: ${{ secrets.DEV_VAR }}
+      API_KEY: ${{ secrets.API_KEY }}
