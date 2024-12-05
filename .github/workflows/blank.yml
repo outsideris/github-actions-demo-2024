@@ -13,3 +13,5 @@ jobs:
         run: |
           gh api /repos/outsideris/actions-test/dispatches \
           -f event_type='trigger'
+        env:
+          GITHUB_TOKEN: ${{ secrets.PAT }}
