@@ -9,9 +9,8 @@ jobs:
   test:
     runs-on: ubuntu-latest
     steps:
-      - name: Build
-        run: |
-          gh api /repos/outsideris/actions-test/dispatches \
-          -f event_type='trigger'
-        env:
-          GITHUB_TOKEN: ${{ secrets.PAT }}
+      - name: Caller's build
+        run: echo caller
+      - uses: outsideris/actions-test@main
+        with:
+          name: 'Outsider'
