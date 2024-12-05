@@ -12,11 +12,13 @@ jobs:
     steps:
       - name: Caller's build
         run: echo caller
+        shell: bash
       - id: composite
         uses: outsideris/actions-test@main
         with:
           name: 'Outsider'
       - run: echo result = $RESULT
+        shell: bash
         env:
           RESULT: ${{ steps.composite.outputs.result }}
       
